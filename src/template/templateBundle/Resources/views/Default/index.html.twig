@@ -1,1 +1,11 @@
-Hello World!
+{% extends "::layout/layout.html.twig" %}
+{% block body %}
+<div class="span3">
+{{ include("::modulesUsed/produits.html.twig") }}
+{{ include("::modulesUsed/utilisateur.html.twig") }}
+</div>
+<div class="span9">
+  Hello World!
+ </div> 
+{% endblock %}
+
