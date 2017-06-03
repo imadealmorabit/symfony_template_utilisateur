@@ -1,8 +1,12 @@
 {% extends "::layout/layout.html.twig" %}
 {% block body %}
 <div class="span3">
-{{ include("::modulesUsed/produits.html.twig") }}
-{{ include("::modulesUsed/utilisateur.html.twig") }}
+  {{ include("::modulesUsed/produits.html.twig") }}
+ {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+ {{ include("utilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig") }}
+ {% else %}
+ {{ include("utilisateursBundle:Default:modulesUsed/utilisateurs.html.twig") }}
+ {% endif %}   
 </div>
 <div class="span9">
   Hello World!
